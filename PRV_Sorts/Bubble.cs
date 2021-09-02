@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace PRV_Sorts
 {
-    class Bubble
+    public class Bubble
     {
         private static Bubble instance;
         private Bubble() { }
 
-        public Bubble GetInstance()
+        public static Bubble GetInstance()
         {
             if(instance == null)
             {
@@ -20,7 +20,11 @@ namespace PRV_Sorts
 
             return instance;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputArray"></param>
+        /// <returns></returns>
         public int[] Sort(int[] inputArray)
         {
             bool swapped = true;
@@ -36,6 +40,17 @@ namespace PRV_Sorts
 
                 }
             }
+
+            return inputArray;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputArray"></param>
+        /// <returns></returns>
+        public int[] OptimizedSort(int[] inputArray)
+        {
 
             return inputArray;
         }
