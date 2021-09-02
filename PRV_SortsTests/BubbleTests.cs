@@ -13,14 +13,13 @@ namespace PRV_Sorts.Tests
     {
         //arrage
         int[] inputArray = new int[] { 1, 0, 2, 5, 4, 6, 7, 9, 8, 3};
-        int[] sortedArray = new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[] trueArray = new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        Bubble bubble = Bubble.GetInstance();
 
         //act
         [TestMethod()]
         public void GetInstanceTest()
         {
-            Bubble bubble = Bubble.GetInstance();
-            
             //assert
             Assert.IsTrue(bubble != null);
         }
@@ -28,15 +27,17 @@ namespace PRV_Sorts.Tests
         [TestMethod()]
         public void SortTest()
         {
+            int[] sortedArray = bubble.Sort(inputArray);
             //assert
-            Assert.Fail();
+            CollectionAssert.AreEqual(sortedArray, trueArray);
         }
 
         [TestMethod()]
         public void OptimizedSortTest()
         {
+            int[] sortedArray = bubble.OptimizedSort(inputArray);
             //assert
-            Assert.Fail();
+            CollectionAssert.AreEqual(sortedArray, trueArray);
         }
     }
 }
