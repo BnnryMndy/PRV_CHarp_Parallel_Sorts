@@ -20,5 +20,42 @@ namespace PRV_Sorts
 
             return instance;
         }
+
+        public int[] Sort(int[] inputArray)
+        {
+            bool swapped = true;
+            while (swapped)
+            {
+                swapped = false;
+                for (int i = 0; i < inputArray.Length-1; i++)
+                {
+                    if(!swapped)
+                        swapped = SwapIfGreater(ref inputArray[i],ref inputArray[i + 1]);
+                    else
+                        SwapIfGreater(ref inputArray[i], ref inputArray[i + 1]);
+
+                }
+            }
+
+            return inputArray;
+        }
+
+        /// <summary>
+        /// Меняет местами значения, если first больше second
+        /// </summary>
+        /// <param name="first">Первый элемент</param>
+        /// <param name="second">Второй элемент</param>
+        /// <returns>вернёт true, если поменял элементы местами</returns>
+        private bool SwapIfGreater(ref int first, ref int second)
+        {
+            if(first > second)
+            {
+                int temp = second;
+                second = first;
+                first = temp;
+                return true;
+            }
+            return false;
+        }
     }
 }
