@@ -31,13 +31,5 @@ namespace PRV_Sorts.Tests
             //assert
             CollectionAssert.AreEqual(sortedArray, trueArray);
         }
-
-        [TestMethod()]
-        public void OptimizedSortTest()
-        {
-            int[] sortedArray = bubble.OptimizedSort(inputArray);
-            //assert
-            CollectionAssert.AreEqual(sortedArray, trueArray);
-        }
     }
 }

@@ -28,32 +28,22 @@ namespace PRV_Sorts
         public int[] Sort(int[] inputArray)
         {
             bool swapped = true;
-            while (swapped)
+            do
             {
                 swapped = false;
-                for (int i = 0; i < inputArray.Length-1; i++)
+                for (int i = 0; i < inputArray.Length - 1; i++)
                 {
-                    if(!swapped)
-                        swapped = SwapIfGreater(ref inputArray[i],ref inputArray[i + 1]);
+                    if (!swapped)
+                        swapped = SwapIfGreater(ref inputArray[i], ref inputArray[i + 1]);
                     else
                         SwapIfGreater(ref inputArray[i], ref inputArray[i + 1]);
 
                 }
-            }
+            } while (swapped);
 
             return inputArray;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="inputArray"></param>
-        /// <returns></returns>
-        public int[] OptimizedSort(int[] inputArray)
-        {
-
-            return inputArray;
-        }
 
         /// <summary>
         /// Меняет местами значения, если first больше second
