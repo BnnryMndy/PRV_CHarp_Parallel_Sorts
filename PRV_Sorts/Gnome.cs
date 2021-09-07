@@ -6,16 +6,20 @@ using System.Threading.Tasks;
 
 namespace PRV_Sorts
 {
-    class Gnome
+    public class Gnome
     {
         private static Gnome instance;
         private Gnome() { }
 
-        public static Gnome getInstance()
+        public static Gnome GetInstance()
         {
             if (instance == null) instance = new Gnome();
             return instance;
         }
 
+        public void Sort(int[] inputArray)
+        {
+
+        }
     }
 }

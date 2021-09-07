@@ -25,7 +25,7 @@ namespace PRV_Sorts
         /// </summary>
         /// <param name="inputArray"></param>
         /// <returns></returns>
-        public int[] Sort(int[] inputArray)
+        public void Sort(int[] inputArray)
         {
             bool swapped = true;
             do
@@ -40,8 +40,6 @@ namespace PRV_Sorts
 
                 }
             } while (swapped);
-
-            return inputArray;
         }
 
 

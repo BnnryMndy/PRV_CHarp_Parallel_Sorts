@@ -9,25 +9,25 @@ using System.Threading.Tasks;
 namespace PRV_Sorts.Tests
 {
     [TestClass()]
-    public class BubbleTests
+    public class QuickSortTests
     {
         //arrage
-        int[] inputArray = new int[] { 1, 0, 2, 5, 4, 6, 7, 9, 8, 3};
-        int[] trueArray = new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-        Bubble bubble = Bubble.GetInstance();
+        int[] inputArray = new int[] { 1, 0, 2, 5, 4, 6, 7, 9, 8, 3 };
+        int[] trueArray = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        QuickSort quick = QuickSort.GetInstance();
 
         //act
         [TestMethod()]
         public void GetInstanceTest()
         {
             //assert
-            Assert.IsTrue(bubble != null);
+            Assert.IsTrue(quick != null);
         }
 
         [TestMethod()]
         public void SortTest()
         {
-            bubble.Sort(inputArray);
+            quick.Sort(inputArray);
             //assert
             CollectionAssert.AreEqual(inputArray, trueArray);
         }

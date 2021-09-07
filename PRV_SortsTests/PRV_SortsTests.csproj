@@ -52,7 +52,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BubbleTests.cs" />
+    <Compile Include="GnomeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuickSortTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PRV_Sorts\PRV_Sorts.csproj">
