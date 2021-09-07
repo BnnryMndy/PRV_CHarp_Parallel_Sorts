@@ -19,7 +19,35 @@ namespace PRV_Sorts
 
         public void Sort(int[] inputArray)
         {
+            int i = 1;
+            int j = 2;
 
+            while (i< inputArray.Length)
+            {
+                if (inputArray[i] > inputArray[i - 1])
+                {
+                    i = j;
+                    j++;
+                }
+                else
+                {
+                    swap(ref inputArray[i - 1], ref inputArray[i]);
+                    i--;
+                    if(i == 0)
+                    {
+                        i = j;
+                        j++;
+                    }
+
+                }
+            }
+        }
+
+        private void swap(ref int first, ref int second)
+        {
+            int temp = second;
+            second = first;
+            first = temp;
         }
     }
 }
