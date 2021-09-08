@@ -9,6 +9,9 @@ namespace PRV_Sorts
     public class Bubble
     {
         private static Bubble instance;
+        private int[] inputArray;
+        public bool isFinished = false;
+
         private Bubble() { }
 
         public static Bubble GetInstance()
@@ -20,13 +23,21 @@ namespace PRV_Sorts
 
             return instance;
         }
+
+        public void SetArray(int[] inputArray)
+        {
+            this.inputArray = new int[inputArray.Length];
+            inputArray.CopyTo(this.inputArray, 0);
+        }
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="inputArray"></param>
         /// <returns></returns>
-        public void Sort(int[] inputArray)
+        public void Sort()
         {
+            isFinished = false;
             bool swapped = true;
             do
             {
@@ -40,6 +51,8 @@ namespace PRV_Sorts
 
                 }
             } while (swapped);
+
+            isFinished = true;
         }
 
 

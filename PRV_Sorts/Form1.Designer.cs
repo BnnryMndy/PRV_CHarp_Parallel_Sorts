@@ -32,20 +32,19 @@ namespace PRV_Sorts
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.CompareButton = new System.Windows.Forms.Button();
+            this.ElemsComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.BubbleTimeLabel = new System.Windows.Forms.Label();
+            this.QuickTimeLabel = new System.Windows.Forms.Label();
+            this.GnomeTimeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(17, 28);
+            this.label1.Location = new System.Drawing.Point(12, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 32);
             this.label1.TabIndex = 1;
@@ -55,7 +54,7 @@ namespace PRV_Sorts
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(300, 28);
+            this.label2.Location = new System.Drawing.Point(295, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(172, 32);
             this.label2.TabIndex = 2;
@@ -65,84 +64,77 @@ namespace PRV_Sorts
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(564, 28);
+            this.label3.Location = new System.Drawing.Point(559, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(190, 32);
             this.label3.TabIndex = 3;
             this.label3.Text = "🍺Gnome sort";
             // 
-            // button1
+            // CompareButton
             // 
-            this.button1.Location = new System.Drawing.Point(265, 386);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(226, 33);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Compare";
-            this.button1.UseVisualStyleBackColor = true;
+            this.CompareButton.Location = new System.Drawing.Point(268, 239);
+            this.CompareButton.Name = "CompareButton";
+            this.CompareButton.Size = new System.Drawing.Size(226, 33);
+            this.CompareButton.TabIndex = 4;
+            this.CompareButton.Text = "Compare";
+            this.CompareButton.UseVisualStyleBackColor = true;
+            this.CompareButton.Click += new System.EventHandler(this.CompareButton_Click);
             // 
-            // comboBox1
+            // ElemsComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(23, 180);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(185, 28);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(296, 180);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(185, 28);
-            this.comboBox2.TabIndex = 6;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(569, 180);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(185, 28);
-            this.comboBox3.TabIndex = 7;
+            this.ElemsComboBox.FormattingEnabled = true;
+            this.ElemsComboBox.Location = new System.Drawing.Point(13, 44);
+            this.ElemsComboBox.Name = "ElemsComboBox";
+            this.ElemsComboBox.Size = new System.Drawing.Size(185, 28);
+            this.ElemsComboBox.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 144);
+            this.label4.Location = new System.Drawing.Point(9, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 20);
             this.label4.TabIndex = 8;
             this.label4.Text = "Elems count";
             // 
-            // label5
+            // BubbleTimeLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(292, 144);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 20);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Elems count";
+            this.BubbleTimeLabel.AutoSize = true;
+            this.BubbleTimeLabel.Location = new System.Drawing.Point(28, 140);
+            this.BubbleTimeLabel.Name = "BubbleTimeLabel";
+            this.BubbleTimeLabel.Size = new System.Drawing.Size(47, 20);
+            this.BubbleTimeLabel.TabIndex = 11;
+            this.BubbleTimeLabel.Text = "time: ";
             // 
-            // label6
+            // QuickTimeLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(566, 144);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 20);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Elems count";
+            this.QuickTimeLabel.AutoSize = true;
+            this.QuickTimeLabel.Location = new System.Drawing.Point(297, 152);
+            this.QuickTimeLabel.Name = "QuickTimeLabel";
+            this.QuickTimeLabel.Size = new System.Drawing.Size(47, 20);
+            this.QuickTimeLabel.TabIndex = 12;
+            this.QuickTimeLabel.Text = "time: ";
+            // 
+            // GnomeTimeLabel
+            // 
+            this.GnomeTimeLabel.AutoSize = true;
+            this.GnomeTimeLabel.Location = new System.Drawing.Point(571, 152);
+            this.GnomeTimeLabel.Name = "GnomeTimeLabel";
+            this.GnomeTimeLabel.Size = new System.Drawing.Size(47, 20);
+            this.GnomeTimeLabel.TabIndex = 13;
+            this.GnomeTimeLabel.Text = "time: ";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 431);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(789, 283);
+            this.Controls.Add(this.GnomeTimeLabel);
+            this.Controls.Add(this.QuickTimeLabel);
+            this.Controls.Add(this.BubbleTimeLabel);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ElemsComboBox);
+            this.Controls.Add(this.CompareButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -158,13 +150,12 @@ namespace PRV_Sorts
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button CompareButton;
+        private System.Windows.Forms.ComboBox ElemsComboBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label BubbleTimeLabel;
+        private System.Windows.Forms.Label QuickTimeLabel;
+        private System.Windows.Forms.Label GnomeTimeLabel;
     }
 }
 

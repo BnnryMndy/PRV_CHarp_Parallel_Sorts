@@ -9,7 +9,11 @@ namespace PRV_Sorts
     public class Gnome
     {
         private static Gnome instance;
+        private int[] inputArray;
+        public bool isFinished = false;
+
         private Gnome() { }
+
 
         public static Gnome GetInstance()
         {
@@ -17,8 +21,15 @@ namespace PRV_Sorts
             return instance;
         }
 
-        public void Sort(int[] inputArray)
+        public void SetArray(int[] inputArray)
         {
+            this.inputArray = new int[inputArray.Length];
+            inputArray.CopyTo(this.inputArray, 0);
+        }
+
+        public void Sort()
+        {
+            isFinished = false;
             int i = 1;
             int j = 2;
 
@@ -41,6 +52,8 @@ namespace PRV_Sorts
 
                 }
             }
+
+            isFinished = true;
         }
 
         private void swap(ref int first, ref int second)

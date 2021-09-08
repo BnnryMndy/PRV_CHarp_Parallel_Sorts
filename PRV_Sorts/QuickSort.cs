@@ -9,6 +9,8 @@ namespace PRV_Sorts
     public class QuickSort
     {
         private static QuickSort instance;
+        private int[] inputArray;
+        public bool isFinished = false;
 
         private QuickSort() { }
 
@@ -19,9 +21,17 @@ namespace PRV_Sorts
             return instance;
         }
 
-        public void Sort(int[] inputArray)
+        public void SetArray(int[] inputArray)
         {
+            this.inputArray = new int[inputArray.Length];
+            inputArray.CopyTo(this.inputArray, 0);
+        }
+
+        public void Sort()
+        {
+            isFinished = false;
             quickSort(inputArray, 0, inputArray.Length-1);
+            isFinished = true;
         }
 
         private void quickSort(int[] inputArray, int low, int high)
@@ -44,6 +54,7 @@ namespace PRV_Sorts
         private int partition(int[] arr, int left, int right)
         {
             int pivot = arr[left];
+            //int pav = arr[(left + right) / 2];
             while (true)
             {
 
