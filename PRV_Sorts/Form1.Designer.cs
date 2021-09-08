@@ -29,6 +29,7 @@ namespace PRV_Sorts
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@ namespace PRV_Sorts
             this.BubbleTimeLabel = new System.Windows.Forms.Label();
             this.QuickTimeLabel = new System.Windows.Forms.Label();
             this.GnomeTimeLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -124,6 +126,11 @@ namespace PRV_Sorts
             this.GnomeTimeLabel.TabIndex = 13;
             this.GnomeTimeLabel.Text = "time: ";
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -156,6 +163,7 @@ namespace PRV_Sorts
         private System.Windows.Forms.Label BubbleTimeLabel;
         private System.Windows.Forms.Label QuickTimeLabel;
         private System.Windows.Forms.Label GnomeTimeLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

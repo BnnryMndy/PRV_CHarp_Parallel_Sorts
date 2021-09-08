@@ -14,6 +14,9 @@ namespace PRV_Sorts
 {
     public partial class Form1 : Form
     {
+        Bubble bubble = Bubble.GetInstance();
+        QuickSort quick = QuickSort.GetInstance();
+        Gnome gnome = Gnome.GetInstance();
 
         public Form1()
         {
@@ -28,6 +31,7 @@ namespace PRV_Sorts
 
         private void CompareButton_Click(object sender, EventArgs e)
         {
+
             int size = Convert.ToInt32(ElemsComboBox.SelectedItem.ToString());
             RandomArray randomize = new RandomArray(size);
 
@@ -35,9 +39,7 @@ namespace PRV_Sorts
             int[] quickArray = randomize.GenerateNewArray(size);
             int[] gnomeArray = randomize.GenerateNewArray(size);
 
-            Bubble bubble = Bubble.GetInstance();
-            QuickSort quick = QuickSort.GetInstance();
-            Gnome gnome = Gnome.GetInstance();
+
 
             bubble.SetArray(bubbleArray);
             quick.SetArray(quickArray);
@@ -53,12 +55,14 @@ namespace PRV_Sorts
             Stopwatch gnomeTimer = new Stopwatch();
 
             bubbleTimer.Start();
+
+            timer1.Start();
             bubbleThread.Start();
             quickTimer.Start();
             quickThread.Start();
             gnomeTimer.Start();
             gnomeThread.Start();
-
+            /*
             while(!(bubble.isFinished && quick.isFinished && gnome.isFinished))
             {
                 if (bubble.isFinished) bubbleTimer.Stop();
@@ -66,7 +70,7 @@ namespace PRV_Sorts
                 if (gnome.isFinished) gnomeTimer.Stop();
             }
 
-            /*
+      
             bubbleTimer.Start();
             bubble.Sort();
             bubbleTimer.Stop();
@@ -79,12 +83,19 @@ namespace PRV_Sorts
             gnome.Sort();
             gnomeTimer.Stop();
 
-            */
+            
 
             BubbleTimeLabel.Text = "time: " + bubbleTimer.ElapsedMilliseconds.ToString() + " ms";
             QuickTimeLabel.Text = "time: " + quickTimer.ElapsedMilliseconds.ToString() + " ms";
             GnomeTimeLabel.Text = "time: " + gnomeTimer.ElapsedMilliseconds.ToString() + " ms";
+            */
+        }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (bubble.isFinished) BubbleTimeLabel.Text = "finished ";
+            if (quick.isFinished) QuickTimeLabel.Text = "finished ";
+            if (gnome.isFinished) GnomeTimeLabel.Text = "finished ";
         }
     }
 }
