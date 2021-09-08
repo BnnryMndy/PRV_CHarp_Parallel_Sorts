@@ -62,6 +62,8 @@ namespace PRV_Sorts
             quickThread.Start();
             gnomeTimer.Start();
             gnomeThread.Start();
+
+            //TODO: make it right
             /*
             while(!(bubble.isFinished && quick.isFinished && gnome.isFinished))
             {
