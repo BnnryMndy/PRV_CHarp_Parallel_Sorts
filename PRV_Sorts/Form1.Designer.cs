@@ -40,6 +40,9 @@ namespace PRV_Sorts
             this.QuickTimeLabel = new System.Windows.Forms.Label();
             this.GnomeTimeLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.shellProgress = new System.Windows.Forms.ProgressBar();
+            this.bubbleProgressBar = new System.Windows.Forms.ProgressBar();
+            this.quickProgressBar = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // label1
@@ -131,11 +134,36 @@ namespace PRV_Sorts
             this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // shellProgress
+            // 
+            this.shellProgress.Location = new System.Drawing.Point(569, 200);
+            this.shellProgress.Name = "shellProgress";
+            this.shellProgress.Size = new System.Drawing.Size(180, 23);
+            this.shellProgress.TabIndex = 14;
+            // 
+            // bubbleProgressBar
+            // 
+            this.bubbleProgressBar.Location = new System.Drawing.Point(23, 200);
+            this.bubbleProgressBar.Name = "bubbleProgressBar";
+            this.bubbleProgressBar.Size = new System.Drawing.Size(180, 23);
+            this.bubbleProgressBar.TabIndex = 15;
+            // 
+            // quickProgressBar
+            // 
+            this.quickProgressBar.Location = new System.Drawing.Point(301, 200);
+            this.quickProgressBar.Name = "quickProgressBar";
+            this.quickProgressBar.Size = new System.Drawing.Size(180, 23);
+            this.quickProgressBar.TabIndex = 16;
+            this.quickProgressBar.Value = 100;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 283);
+            this.Controls.Add(this.quickProgressBar);
+            this.Controls.Add(this.bubbleProgressBar);
+            this.Controls.Add(this.shellProgress);
             this.Controls.Add(this.GnomeTimeLabel);
             this.Controls.Add(this.QuickTimeLabel);
             this.Controls.Add(this.BubbleTimeLabel);
@@ -164,6 +192,9 @@ namespace PRV_Sorts
         private System.Windows.Forms.Label QuickTimeLabel;
         private System.Windows.Forms.Label GnomeTimeLabel;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ProgressBar shellProgress;
+        private System.Windows.Forms.ProgressBar bubbleProgressBar;
+        private System.Windows.Forms.ProgressBar quickProgressBar;
     }
 }
 

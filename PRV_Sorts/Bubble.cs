@@ -11,6 +11,8 @@ namespace PRV_Sorts
         private static Bubble instance;
         private int[] inputArray;
         public bool isFinished = false;
+        public delegate void Progress(int x);
+        public Progress progress;
 
         private Bubble() { }
 
@@ -38,19 +40,21 @@ namespace PRV_Sorts
         public void Sort()
         {
             isFinished = false;
-            bool swapped = true;
-            do
-            {
-                swapped = false;
-                for (int i = 0; i < inputArray.Length - 1; i++)
-                {
-                    if (!swapped)
-                        swapped = SwapIfGreater(ref inputArray[i], ref inputArray[i + 1]);
-                    else
-                        SwapIfGreater(ref inputArray[i], ref inputArray[i + 1]);
+            progress(0);
 
+            for (int i = 0; i < inputArray.Length - 1; i++)
+            {
+                int process = i * 100 / inputArray.Length;
+                if (inputArray[i] > inputArray[i + 1])
+                {
+                    int tmp = inputArray[i + 1];
+                    inputArray[i + 1] = inputArray[i];
+                    inputArray[i] = tmp;
                 }
-            } while (swapped);
+                progress(process);
+
+            }
+            progress(100);
 
             isFinished = true;
         }

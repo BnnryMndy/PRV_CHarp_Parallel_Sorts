@@ -11,6 +11,8 @@ namespace PRV_Sorts
         private static Gnome instance;
         private int[] inputArray;
         public bool isFinished = false;
+        public delegate void Progress(int x);
+        public Progress progress;
 
         private Gnome() { }
 
@@ -29,12 +31,14 @@ namespace PRV_Sorts
 
         public void Sort()
         {
+            progress(0);
             isFinished = false;
             int i = 1;
             int j = 2;
 
             while (i< inputArray.Length)
             {
+                //progress(i * 100 / inputArray.Length);
                 if (inputArray[i] > inputArray[i - 1])
                 {
                     i = j;
@@ -52,8 +56,9 @@ namespace PRV_Sorts
 
                 }
             }
-
+            progress(100);
             isFinished = true;
+            
         }
 
         private void swap(ref int first, ref int second)

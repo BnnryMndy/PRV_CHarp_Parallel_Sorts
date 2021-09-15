@@ -17,6 +17,28 @@ namespace PRV_Sorts
         Bubble bubble = Bubble.GetInstance();
         QuickSort quick = QuickSort.GetInstance();
         Gnome gnome = Gnome.GetInstance();
+        
+        private void ShellProgressBar(int x)
+        {
+            if (InvokeRequired)
+            {
+                Gnome.Progress progress1 = this.ShellProgressBar;
+                this.Invoke(progress1, x);
+            }
+
+            shellProgress.Value = x;
+        }
+
+        private void BubbleProgressBar(int x)
+        {
+            if (InvokeRequired)
+            {
+                Bubble.Progress progress1 = this.BubbleProgressBar;
+                this.Invoke(progress1, x);
+            }
+
+            bubbleProgressBar.Value = x;
+        }
 
         public Form1()
         {
@@ -26,7 +48,8 @@ namespace PRV_Sorts
             {
                 ElemsComboBox.Items.Add(i);
             }
-            
+            gnome.progress = ShellProgressBar;
+            bubble.progress = BubbleProgressBar;
         }
 
         private void CompareButton_Click(object sender, EventArgs e)
