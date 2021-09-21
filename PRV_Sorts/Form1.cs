@@ -29,6 +29,17 @@ namespace PRV_Sorts
             shellProgress.Value = x;
         }
 
+        private void QuickProgressBar(int x)
+        {
+            if (InvokeRequired)
+            {
+                QuickSort.Progress progress1 = this.QuickProgressBar;
+                this.Invoke(progress1, x);
+            }
+
+            quickProgressBar.Value = x;
+        }
+
         private void BubbleProgressBar(int x)
         {
             if (InvokeRequired)
@@ -50,6 +61,7 @@ namespace PRV_Sorts
             }
             gnome.progress = ShellProgressBar;
             bubble.progress = BubbleProgressBar;
+            quick.progress = QuickProgressBar;
         }
 
         private void CompareButton_Click(object sender, EventArgs e)
@@ -86,34 +98,7 @@ namespace PRV_Sorts
             gnomeTimer.Start();
             gnomeThread.Start();
 
-            //TODO: make it right
-            /*
-            while(!(bubble.isFinished && quick.isFinished && gnome.isFinished))
-            {
-                if (bubble.isFinished) bubbleTimer.Stop();
-                if (quick.isFinished) quickTimer.Stop();
-                if (gnome.isFinished) gnomeTimer.Stop();
-            }
-
-      
-            bubbleTimer.Start();
-            bubble.Sort();
-            bubbleTimer.Stop();
-
-            quickTimer.Start();
-            quick.Sort();
-            quickTimer.Stop();
-
-            gnomeTimer.Start();
-            gnome.Sort();
-            gnomeTimer.Stop();
-
             
-
-            BubbleTimeLabel.Text = "time: " + bubbleTimer.ElapsedMilliseconds.ToString() + " ms";
-            QuickTimeLabel.Text = "time: " + quickTimer.ElapsedMilliseconds.ToString() + " ms";
-            GnomeTimeLabel.Text = "time: " + gnomeTimer.ElapsedMilliseconds.ToString() + " ms";
-            */
         }
 
         private void timer1_Tick(object sender, EventArgs e)

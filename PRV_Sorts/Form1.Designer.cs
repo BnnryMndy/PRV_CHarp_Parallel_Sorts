@@ -154,7 +154,6 @@ namespace PRV_Sorts
             this.quickProgressBar.Name = "quickProgressBar";
             this.quickProgressBar.Size = new System.Drawing.Size(180, 23);
             this.quickProgressBar.TabIndex = 16;
-            this.quickProgressBar.Value = 100;
             // 
             // Form1
             // 
