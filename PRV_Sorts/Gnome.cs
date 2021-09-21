@@ -35,10 +35,11 @@ namespace PRV_Sorts
             isFinished = false;
             int i = 1;
             int j = 2;
+            //int sortProgress = 1;
 
             while (i< inputArray.Length)
             {
-                //progress(i * 100 / inputArray.Length);
+                progress(j * 100 / inputArray.Length);
                 if (inputArray[i] > inputArray[i - 1])
                 {
                     i = j;
