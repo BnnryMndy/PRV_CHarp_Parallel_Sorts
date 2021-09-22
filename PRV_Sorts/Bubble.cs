@@ -41,17 +41,22 @@ namespace PRV_Sorts
         {
             isFinished = false;
             progress(0);
-
+            int step = inputArray.Length / 100;
+            int currStep = 0;
             for (int i = 0; i < inputArray.Length - 1; i++)
             {
-                int process = i * 100 / inputArray.Length;
+                currStep++;
                 if (inputArray[i] > inputArray[i + 1])
                 {
                     int tmp = inputArray[i + 1];
                     inputArray[i + 1] = inputArray[i];
                     inputArray[i] = tmp;
                 }
-                progress(process);
+                if (currStep > step)
+                {
+                    progress(i * 100 / inputArray.Length);
+                    currStep = 0;
+                } 
 
             }
             progress(100);
